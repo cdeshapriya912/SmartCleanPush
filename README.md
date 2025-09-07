@@ -30,11 +30,21 @@ A powerful SketchUp plugin designed to simplify geometry cleanup and push/pull o
 
 ### Method 1: Manual Installation
 1. Download the latest release from the [Releases](https://github.com/yourusername/SmartCleanPush/releases) page
-2. Extract the plugin files to your SketchUp plugins directory:
+2. Extract the entire `Plugin` folder to your SketchUp plugins directory:
    - **Windows**: `C:\Users\[username]\AppData\Roaming\SketchUp\SketchUp [version]\SketchUp\Plugins\`
    - **macOS**: `~/Library/Application Support/SketchUp [version]/SketchUp/Plugins/`
-3. Restart SketchUp
-4. The plugin will appear in the Extensions menu
+3. Ensure the folder structure looks like this in your Plugins directory:
+   ```
+   Plugins/
+   └── Plugin/
+       ├── SmartCleanPush.rb
+       └── SmartCleanPush/
+           ├── main.rb
+           ├── help.html
+           └── [other files...]
+   ```
+4. Restart SketchUp
+5. The plugin will appear in the Extensions menu
 
 ### Method 2: Extension Warehouse (Future)
 *Coming soon - the plugin will be available through SketchUp's Extension Warehouse*
@@ -101,21 +111,25 @@ All commands are also available through:
 ### Plugin Structure
 ```
 SmartCleanPush/
-├── SmartCleanPush.rb          # Main extension loader
-├── SmartCleanPush/
-│   ├── main.rb               # Core functionality
-│   ├── help.html             # Help documentation
-│   ├── my_photo.jpg          # Developer photo
-│   └── icons/                # Plugin icons
-│       ├── scp_main_icon_16.png
-│       ├── scp_main_icon_24.png
-│       ├── scp_inner_face_16.png
-│       ├── scp_inner_face_24.png
-│       ├── scp_inner_push_16.png
-│       ├── scp_inner_push_24.png
-│       ├── scp_multi_push_16.png
-│       └── scp_multi_push_24.png
-└── README.md                 # This file
+├── Plugin/                   # Plugin files directory
+│   ├── SmartCleanPush.rb    # Main extension loader
+│   └── SmartCleanPush/      # Core plugin directory
+│       ├── main.rb          # Core functionality
+│       ├── help.html        # Help documentation
+│       ├── my_photo.jpg     # Developer photo
+│       ├── example_before.png # Before example image
+│       ├── example_after.png  # After example image
+│       ├── toolbar_example.png # Toolbar example image
+│       └── icons/           # Plugin icons
+│           ├── scp_main_icon_16.png
+│           ├── scp_main_icon_24.png
+│           ├── scp_inner_face_16.png
+│           ├── scp_inner_face_24.png
+│           ├── scp_inner_push_16.png
+│           ├── scp_inner_push_24.png
+│           ├── scp_multi_push_16.png
+│           └── scp_multi_push_24.png
+└── README.md                # This file
 ```
 
 ### Key Methods
